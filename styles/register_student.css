@@ -1,0 +1,16 @@
+.container-custom {
+    width: 20%;
+}
+
+.register-student-form {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 40px;
+    border-radius: 14px;
+    min-width: 400px;
+    max-width: 400px;
+    width: 400px;
+}
+ 
+.input-group-append {
+    cursor: pointer;
+}

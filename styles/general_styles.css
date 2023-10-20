@@ -1,0 +1,32 @@
+.wtext {
+    color: aliceblue;
+}
+
+.toverflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.table td {
+    max-width: 150px;
+}
+
+.bg-rounded-wt {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 40px;
+    border-radius: 14px;
+}
+
+#example_info {
+    color: aliceblue;
+}
+
+#example_length label {
+    color:aliceblue;
+}
+
+#example_filter label {
+    color: aliceblue;
+}
