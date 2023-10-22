@@ -26,8 +26,11 @@
                         Student
                     </a>
                     <ul class="dropdown-menu">
+                        <!-- Cuando el usuario presiona este enlace, irá al archivo register_student.php, o sea a la pagina de registrar estudiante -->
                         <li><a class="dropdown-item" href="../../Angeles/pages/register_student.php">Register Student</a></li>
+                        <!-- Cuando el usuario presiona este enlace, irá al archivo membership.php, o sea a la pagina de verificar estado de la membresia -->
                         <li><a class="dropdown-item" href="../../Angeles/pages/membership.php">Membership Status</a></li>
+                        <!-- Cuando el usuario presiona este enlace, irá al archivo sanctions.php, o sea a la pagina de sanciones, donde se encuentra la tabla -->
                         <li><a class="dropdown-item" href="../../Angeles/pages/sanctions.php">Sanctions</a></li>
                         <li><a class="dropdown-item" href="#">Cancel Registration</a></li>
                         <li><a class="dropdown-item" href="#">Student Progress</a></li>
@@ -57,6 +60,7 @@
                     <li><a class="dropdown-item" href="#">Edit profile</a></li>
                     <li><a class="dropdown-item" href="#">About</a></li>
                     <li><hr class="dropdown-divider"></li>
+                    <!-- Cuando el usuario presiona este enlace, irá al archivvo do_logout.php y cerrará sesion y será dirigido al index para que inicie sesion nuevamente -->
                     <li><a class="dropdown-item" href="../../Angeles/tasks/do_logout.php">Log out</a></li>
                 </ul>
             </div>
