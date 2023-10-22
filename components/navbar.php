@@ -9,7 +9,12 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li>
+                <!-- Abrimos codigo php para validar si existe el key role dentro del array asociativvo $_SESSION, adicional a eso 
+                    validamos tambien que si el valor de dicho key es igual a Admin -->
                 <?php if (isset($_SESSION["role"]) && $_SESSION["role"] == "Admin") {
+                    //Si entra al if, es porque se cumplieron las 2 condiciones previas, o sea que la persona tiene el rol de admin
+                    // Entonces procedemos a pintar una opcion más, en este caso, la opcion de registrar estudiantes
+                    // ya que es una funcionalidad solo de administrador, de resto si la persona no tiene rol admin, no verá esta opcion
                     echo "
                     <li class='nav-item'>
                         <a class='nav-link' href='../pages/register_student.php'>Register</a>

@@ -24,6 +24,9 @@
                     $data = $statement->fetchAll();
                     if (sizeof($data) != 0) {
                         foreach ($data as $sanction) {
+                            // $data => [["id" => "1", "name" => "victor"], ["id" => "2", "name" => "virgil"]]
+                            //$sanction => ["id" => "1", "name" => "victor"]
+                            //$sanction => ["id" => "2", "name" => "virgil"]
                             echo "
                                 <tr>
                                     <th scope='row'>" . $sanction["id"] . "</th>

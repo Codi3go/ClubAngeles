@@ -27,6 +27,7 @@ require_once("../../dansh/connection/DBConnection.php");
          * 
          * en la consulta puedes ver la clausula WHERE que es para filtrar datos exactos, ando buscando por email y password y como tiene el AND es obligatorio que para 
          * que la consulta sea exitosa, ambos valores deben coincidir, esta :email y :password, están asi por que son variables de referencia en la consulta
+         * PDO -> PHP DATA OBJECT
          */
         $statement = $connection->getConnection()->prepare("SELECT us.email, ro.description as roleDescription FROM user us INNER JOIN role ro ON us.role_id = ro.id WHERE email = :email AND password = :password LIMIT 1");
         /** usando la variable statement, ejecutamos la consulta previamente preparada, al momento de invocar el execute
@@ -39,6 +40,9 @@ require_once("../../dansh/connection/DBConnection.php");
          * y dicho array lo almacenamos en la variable data
          */
         $data = $statement->fetchAll();
+
+        //["email" => "bikcodeh@gmail.com", "roleDescription" => "admin"]
+        //[]
         /** nos aseguramos de que la consulta si haya arrojado registros y como data es un array, si hay datos, al menos 1, entonces el tamaño del array
          * será 1, si es 0 es porque la consulta no encontró nada
          * 
