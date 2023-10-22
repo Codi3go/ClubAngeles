@@ -1,4 +1,4 @@
-<!-- 
+<!-- Hola este comenrario es de prueba
     Iniciamos el uso de sessiones, esto para hacer uso de las mismas desde el primer momento que se inicia la aplicación
 
     Como la pantalla de entrada es el login, tenemos un cuerpo html especifico para el login, pues estamos agregando los estilos del login, que solo
