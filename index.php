@@ -14,8 +14,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="../../Angeles/js/login.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="../../Angeles/styles/login_style.css" type="text/css" />
+    <script src="./js/login.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="./styles/login_style.css" type="text/css" />
     <title>Angeles</title>
 </head>
 
@@ -43,7 +43,7 @@
             no vea la pantalla de login
             Para hacer uso de la funcion header, es header("location: ruta_del_archivo") -->
         <?php if (isset($_SESSION["username"])) {
-            header("Location: ../../Angeles/pages/welcome.php");
+            header("Location: ./pages/welcome.php");
         } ?>
         <!-- Las clases que suelen tener los divs y de mas, suelen ser de bootstrap, muy pocas en particular son custom en el sentido de creadas por mi -->
         <div class="container" id="container">
@@ -51,7 +51,7 @@
             <div class="form-container">
                 <!-- Creamos el formulario, en el action ponemos el archivo, la ruta, del archivo que queremos que se ejecuta al momento de
                     enviar el formulario, en el method ponemos POST porque estamos enviando datos-->
-                <form action="../../Angeles/tasks/do_login.php" method="POST">
+                <form action="./tasks/do_login.php" method="POST">
                     <h1>Sign in</h1>
                     <!-- A los inputs, le tenemos que poner el atributo name y darle un identificador claro y conciso, pues con ese name es el que luego vamos a obtener la informacion 
                      Ya sea del array asociativo $_POST o $_GET cuando al method del form es GET -->

@@ -4,11 +4,12 @@ session_start();
 /** 
  * Incluyo el archivo de la conexion a la base de datos para poder usarla
 */
-require_once("../../dansh/connection/DBConnection.php");
+require("../connection/DBConnection.php");
+require("../connection/DataConnection.php");
 /** Creo una instancia de la clase PDODatabaseConnection, pasandole por el constructor los datos que necesita
  * y dicha instancia la almanceno en la variable connection
  */
-    $connection = new PDODatabaseConnection("localhost", "bikcode", "12345", "dansh");
+    $connection = new PDODatabaseConnection(DataConnection::$host, DataConnection::$username, DataConnection::$password, DataConnection::$db);
     /** Valido que si lo las variables EMAIL Y PASSWORD que viene dentro del array POST ninguna de las 2 sea vacio  */
     if($_POST["email"] != "" && $_POST["password"] != "") {
         /**Si ninguna es vacia, entonces entra al IF */
