@@ -1,29 +1,23 @@
 <?php
+//Iniciamos el uso de ssiones
 session_start();
+/* Validamos si no existe el key username dentro del array asociativo $_SESSION
+Si dicho key no existe, es porque el usuario no ha iniciado sesión y está intentando entrar al welcome, entonces usamos la funcion header de php para redirigir al usuario a la pantalla index 
+donde esta el login
+Para hacer uso de la funcion header, es header("location: ruta_del_archivo") */
 if (!isset($_SESSION["username"])) {
     header("Location: ../index.php");
 }
 ?>
-<!doctype html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../Angeles/styles/background_style.css" type="text/css" />
-</head>
-
-<body>
-    <?php include("../components/navbar.php"); ?>
-    <div class="container mt-3">
-        <div class="alert alert-success" role="alert">
-            Welcome <strong><?php echo $_SESSION["username"]; ?></strong> Role: <strong><?php echo $_SESSION["role"]; ?></strong>
-        </div>
+<!-- Abrimos codigo php para incluir el archivo header para pintar el html base hasta el body -->
+<?php include("../components/header_generic.php"); ?>
+<!-- Abrimos codigo php para incluir el archivo navbar para pintar la barra de navegación  con su funcionalidad -->
+<?php include("../components/navbar.php"); ?>
+<div class="container mt-3">
+    <div class="alert alert-success" role="alert">
+        <!-- Mostramos un mensaje de bienvenida sacando el username y el rol del array asociativo $_SESSION -->
+        Welcome <strong><?php echo $_SESSION["username"]; ?></strong> Role: <strong><?php echo $_SESSION["role"]; ?></strong>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</body>
-
-</html>
+</div>
+<!-- Abrimos codigo php para incluir el archivo footer para pintar el html base hasta el body cuando cierra -->
+<?php include("../components/footer_generic.php"); ?>

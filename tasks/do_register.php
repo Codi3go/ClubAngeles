@@ -1,6 +1,7 @@
 <?php
-require_once("../../Angeles/connection/DBConnection.php");
-$connection = new PDODatabaseConnection("localhost", "bikcode", "12345", "Angeles");
+require("../connection/DBConnection.php");
+require("../connection/DataConnection.php");
+$connection = new PDODatabaseConnection(DataConnection::$host, DataConnection::$username, DataConnection::$password, DataConnection::$db);
     if ($_POST["name"] != "" &&
         $_POST["email"] != "" &&
         $_POST["pass"] != "" 

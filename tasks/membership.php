@@ -1,9 +1,10 @@
 <?php
-require_once("../../Angeles/connection/DBConnection.php");
+require("../connection/DBConnection.php");
+require("../connection/DataConnection.php");
 if (isset($_POST['busqueda'])) {
     // Recibe la búsqueda desde la solicitud Ajax
     $busqueda = $_POST['busqueda'];
-    $connection = new PDODatabaseConnection("localhost", "bikcode", "12345", "Angeles");
+    $connection = new PDODatabaseConnection(DataConnection::$host, DataConnection::$username, DataConnection::$password, DataConnection::$db);
     $request = $connection->getConnection()->prepare("SELECT ms.description, ms.status FROM student st INNER JOIN membership ms ON st.membership_id = ms.id WHERE st.id = :studentId LIMIT 1");
     $request->execute(['studentId' => $busqueda]);
     $data = $request->fetchAll();
